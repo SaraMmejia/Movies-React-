@@ -37,7 +37,7 @@ class PlayingMovies extends React.Component {
 			method: "GET",
 		})
 			.then((response) => {
-				this.setState({ playings: response.data });
+				this.setState({ playings: response.data.results });
 			})
 			.catch((error) => {
 				this.setState({ error: true });
@@ -51,7 +51,7 @@ class PlayingMovies extends React.Component {
 		if (this.state.error) return <p>Ups! something went wrong!</p>;
 		return (
 			<div className="App">
-				<MoviesPlaying playing={this.state.playings} />
+				<MoviesPlaying playings={this.state.playings} />
 			</div>
 		);
 	}

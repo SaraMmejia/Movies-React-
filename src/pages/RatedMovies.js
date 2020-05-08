@@ -37,7 +37,7 @@ class RatedsMovies extends React.Component {
 			method: "GET",
 		})
 			.then((response) => {
-				this.setState({ rateds: response.data });
+				this.setState({ rateds: response.data.results });
 			})
 			.catch((error) => {
 				this.setState({ error: true });

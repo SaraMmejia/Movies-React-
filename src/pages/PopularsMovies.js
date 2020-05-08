@@ -37,7 +37,7 @@ class PopularsMovies extends React.Component {
 			method: "GET",
 		})
 			.then((response) => {
-				this.setState({ populars: response.data });
+				this.setState({ populars: response.data.results });
 			})
 			.catch((error) => {
 				this.setState({ error: true });

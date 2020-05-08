@@ -2,21 +2,21 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function MoviesUpcoming({ upcoming }) {
+function MoviesUpcoming({ upcomings }) {
 	return (
-		<div className="rateds" key="upcoming.id">
+		<div className="upcomings" key="upcoming.id">
 			<h1>Upcoming Movies</h1>
 			<Link to="/">HOME </Link>
 			<Link to="/now-playing">Playings Movies </Link>
 			<Link to="/popular">Populars Movies </Link>
 			<Link to="/top-rated">Rateds Movies </Link>
-			{upcoming &&
-				upcoming.length > 0 &&
-				upcoming.map((rated) => {
+			{upcomings &&
+				upcomings.length > 0 &&
+				upcomings.map((upcomings) => {
 					return (
-						<div className="rated" key={upcoming.id}>
-							<h2>{upcoming.title}</h2>
-							<p>{upcoming.overview}</p>
+						<div className="comings" key={upcomings.id}>
+							<h2>{upcomings.title}</h2>
+							<p>{upcomings.overview}</p>
 						</div>
 					);
 				})}
@@ -33,11 +33,11 @@ class UpcomingMovies extends React.Component {
 	componentDidMount() {
 		axios({
 			url:
-				"https://api.themoviedb.org/3/movie/top_rated?api_key=f784d51211ae6f36dd6a8855e3980923&language=en-US&page=1",
+				"https://api.themoviedb.org/3/movie/upcoming?api_key=f784d51211ae6f36dd6a8855e3980923&language=en-US&page=1",
 			method: "GET",
 		})
 			.then((response) => {
-				this.setState({ upcomings: response.data });
+				this.setState({ upcomings: response.data.results });
 			})
 			.catch((error) => {
 				this.setState({ error: true });
