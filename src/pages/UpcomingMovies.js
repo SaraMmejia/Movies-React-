@@ -6,10 +6,6 @@ function MoviesUpcoming({ upcomings }) {
 	return (
 		<div className="upcomings" key="upcoming.id">
 			<h1>Upcoming Movies</h1>
-			<Link to="/">HOME </Link>
-			<Link to="/now-playing">Playings Movies </Link>
-			<Link to="/popular">Populars Movies </Link>
-			<Link to="/top-rated">Rateds Movies </Link>
 			{upcomings &&
 				upcomings.length > 0 &&
 				upcomings.map((upcomings) => {

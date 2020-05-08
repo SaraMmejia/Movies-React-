@@ -6,10 +6,7 @@ function MoviesPopular({ populars }) {
 	return (
 		<div className="populars">
 			<h1>Populars Movies</h1>
-			<Link to="/">HOME </Link>
-			<Link to="/now-playing">Playings Movies </Link>
-			<Link to="/top-rated">Rateds Movies </Link>
-			<Link to="/upcoming">Upcomings Movies </Link>
+
 			{populars &&
 				populars.length > 0 &&
 				populars.map((popular) => {

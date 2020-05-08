@@ -6,10 +6,7 @@ function MoviesRated({ rateds }) {
 	return (
 		<div className="rateds">
 			<h1>Rateds Movies</h1>
-			<Link to="/">HOME </Link>
-			<Link to="/now-playing">Playings Movies </Link>
-			<Link to="/popular">Populars Movies </Link>
-			<Link to="/upcoming">Upcomings Movies </Link>
+
 			{rateds &&
 				rateds.length > 0 &&
 				rateds.map((rated) => {
